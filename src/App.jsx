@@ -136,12 +136,10 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {/* Statistics Cards (Bonus: Total count & Department overview) */}
+        {/* Statistics Cards (Bonus: Show total number of students) */}
         <StatsOverview
           totalStudents={totalStudents}
           departmentsCount={uniqueDepartmentsCount}
-          filteredCount={filteredStudents.length}
-          isFiltering={isFiltering}
         />
 
         {/* Responsive Grid: Left Column Form, Right Column List */}
