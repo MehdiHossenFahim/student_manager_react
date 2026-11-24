@@ -89,7 +89,7 @@ export function validateStudent(data) {
       (digitsOnly.length === 13 && digitsOnly.startsWith('8801'));
 
     if (!isBDFormat) {
-      errors.phone = 'Please enter a valid Bangladeshi mobile number (e.g. 01712-345678 or +880 1712-345678).';
+      errors.phone = 'Please enter a valid phone number (e.g. 01712-345678).';
     }
   }
 
@@ -120,7 +120,7 @@ export function exportToCSV(students) {
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement('a');
   link.setAttribute('href', encodedUri);
-  link.setAttribute('download', `bangladeshi_students_export_${new Date().toISOString().slice(0, 10)}.csv`);
+  link.setAttribute('download', `students_export_${new Date().toISOString().slice(0, 10)}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -1,37 +1,28 @@
 # Student Management App
 
-A simple and responsive Student Management web application built with React and Tailwind CSS. This project was developed as part of a front-end assignment to manage student records (add, view, search, edit, delete, and persist data).
+A responsive web application built with React and Tailwind CSS for managing student records. Users can add, view, search, edit, delete, and persist student information.
 
-**Developer:** Mehedi Hossen Fahim  
-**Live Repository:** [https://github.com/MehdiHossenFahim/student_manager_react](https://github.com/MehdiHossenFahim/student_manager_react)
+**Author:** Mehedi Hossen Fahim  
+**Repository:** [https://github.com/MehdiHossenFahim/student_manager_react](https://github.com/MehdiHossenFahim/student_manager_react)
 
 ---
 
 ## Features
 
-### Core Requirements
-1. **Student Registration Form:**
-   - Add new students with Name, Email, Phone Number, and Department.
-   - Includes validation for required fields, valid email format, and Bangladeshi phone numbers (`01XXXXXXXXX` or `+8801XXXXXXXXX`).
-2. **Student Directory / List:**
-   - Shows all enrolled students in a clean table view on desktop and responsive card view on mobile.
-   - Displays Student Name, Email, Phone Number, and Department with color-coded badges.
-3. **Delete Student:**
-   - Delete button for each student record.
-   - Shows a confirmation modal before deleting so records aren't removed by accident.
-4. **Search Functionality:**
-   - Instant search bar to filter students by name in real-time.
-5. **Clean & Responsive UI:**
-   - Built with Tailwind CSS.
-   - Works smoothly on mobile phones, tablets, and desktop screens.
+### Core Features
+- **Student Form:** Add students with Name, Email, Phone Number, and Department with input validation.
+- **Student List:** View all student records in a responsive table on desktop and card layout on mobile devices.
+- **Search:** Search students by name in real-time.
+- **Delete:** Remove student records with a confirmation dialog to avoid accidental deletion.
+- **Responsive UI:** Clean and modern interface built using Tailwind CSS.
 
-### Bonus Features Implemented
-- **Edit Student:** Update any existing student's name, email, phone, or department via an edit modal.
-- **Student Statistics:** Live count of total students, active departments, and search match counter.
-- **LocalStorage Support:** All changes (adds, edits, deletes) automatically save in the browser's LocalStorage so data isn't lost on page refresh.
-- **Department Filter & Sorting:** Quick filter dropdown by department and sorting options (A-Z, Z-A, newest, oldest).
-- **Export to CSV:** Download the student list as a CSV file for spreadsheets.
-- **Reset Demo Data:** One-click reset button to restore the initial Bangladeshi student records for easy testing.
+### Additional Features
+- **Edit Student:** Update existing student records through an edit modal.
+- **Statistics Overview:** Displays total students count, active departments, and search match counters.
+- **Local Storage:** Automatically saves student records in the browser so data persists across refreshes.
+- **Filter & Sort:** Filter records by department and sort alphabetically or by date added.
+- **Export to CSV:** Export the student table to a CSV file.
+- **Reset Demo Data:** Option to restore default sample records for easy testing.
 
 ---
 
@@ -39,8 +30,8 @@ A simple and responsive Student Management web application built with React and 
 
 - **React 19**
 - **Vite**
-- **Tailwind CSS v4**
-- **Lucide React** (icons)
+- **Tailwind CSS**
+- **Lucide React**
 
 ---
 
@@ -91,15 +82,10 @@ npm install
 ```bash
 npm run dev
 ```
-Open `http://localhost:5173` in your browser.
 
 ### 4. Build for production
 ```bash
 npm run build
-```
-To test the built production files locally:
-```bash
-npm run preview
 ```
 
 ---
