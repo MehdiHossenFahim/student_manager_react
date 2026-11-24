@@ -1,13 +1,13 @@
 export { DEPARTMENTS } from '../data/defaultStudents';
 
-// Earthy emerald & warm amber / honey palette for student avatars
+// Modern purple & indigo inspired pastel palette for student avatars
 const AVATAR_COLORS = [
-  { bg: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
-  { bg: 'bg-amber-100 text-amber-800 border-amber-200' },
-  { bg: 'bg-teal-100 text-teal-800 border-teal-200' },
-  { bg: 'bg-yellow-100 text-yellow-800 border-yellow-200' },
-  { bg: 'bg-lime-100 text-lime-800 border-lime-200' },
-  { bg: 'bg-stone-100 text-stone-700 border-stone-200' },
+  { bg: 'bg-purple-100 text-purple-700 border-purple-200' },
+  { bg: 'bg-indigo-100 text-indigo-700 border-indigo-200' },
+  { bg: 'bg-violet-100 text-violet-700 border-violet-200' },
+  { bg: 'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200' },
+  { bg: 'bg-sky-100 text-sky-700 border-sky-200' },
+  { bg: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
 ];
 
 export function getInitials(name = '') {
@@ -29,27 +29,30 @@ export function getAvatarColor(name = '') {
 export function getDepartmentBadgeColor(dept = '') {
   const d = dept.toLowerCase();
   if (d.includes('computer') || d.includes('cse')) {
-    return 'bg-emerald-50 text-emerald-800 border-emerald-200/90';
+    return 'bg-purple-50 text-purple-700 border-purple-200/80';
   }
   if (d.includes('electrical') || d.includes('eee')) {
-    return 'bg-amber-50 text-amber-800 border-amber-200/90';
+    return 'bg-indigo-50 text-indigo-700 border-indigo-200/80';
   }
   if (d.includes('mechanical')) {
-    return 'bg-teal-50 text-teal-800 border-teal-200/90';
+    return 'bg-sky-50 text-sky-700 border-sky-200/80';
   }
   if (d.includes('civil')) {
-    return 'bg-yellow-50 text-yellow-800 border-yellow-200/90';
+    return 'bg-amber-50 text-amber-700 border-amber-200/80';
   }
   if (d.includes('business') || d.includes('bba')) {
-    return 'bg-lime-50 text-lime-800 border-lime-200/90';
+    return 'bg-emerald-50 text-emerald-700 border-emerald-200/80';
   }
   if (d.includes('pharmacy')) {
-    return 'bg-emerald-50/70 text-emerald-900 border-emerald-200';
+    return 'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200/80';
   }
   if (d.includes('economics')) {
-    return 'bg-amber-50/70 text-amber-900 border-amber-200';
+    return 'bg-teal-50 text-teal-700 border-teal-200/80';
   }
-  return 'bg-stone-100 text-stone-700 border-stone-200';
+  if (d.includes('english')) {
+    return 'bg-violet-50 text-violet-700 border-violet-200/80';
+  }
+  return 'bg-slate-100 text-slate-700 border-slate-200';
 }
 
 export function validateStudent(data) {

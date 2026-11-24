@@ -77,12 +77,12 @@ export default function StudentForm({ onAddStudent }) {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-stone-200/90 shadow-xs p-5 sm:p-6 transition-all">
-      <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-stone-100">
-        <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700">
+    <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-5 sm:p-6 transition-all">
+      <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-100">
+        <div className="w-8 h-8 rounded-lg bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600">
           <PlusCircle className="w-4 h-4" />
         </div>
-        <h2 className="text-base font-bold text-stone-900">
+        <h2 className="text-base font-bold text-slate-900">
           Add Student
         </h2>
       </div>
@@ -90,11 +90,11 @@ export default function StudentForm({ onAddStudent }) {
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
         {/* Student Name */}
         <div>
-          <label htmlFor="student-name" className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
+          <label htmlFor="student-name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
             Student Name <span className="text-rose-500">*</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
               <User className="w-4 h-4" />
             </div>
             <input
@@ -105,12 +105,12 @@ export default function StudentForm({ onAddStudent }) {
               value={formData.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-stone-50/60 focus:bg-white focus:outline-hidden transition-all ${
+              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-slate-50/50 focus:bg-white focus:outline-hidden transition-all ${
                 errors.name
-                  ? 'border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-200/50'
+                  ? 'border-rose-300 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10'
                   : touched.name && !errors.name && formData.name
-                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200/50'
-                  : 'border-stone-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100'
+                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10'
+                  : 'border-slate-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-500/10'
               }`}
             />
           </div>
@@ -121,11 +121,11 @@ export default function StudentForm({ onAddStudent }) {
 
         {/* Email */}
         <div>
-          <label htmlFor="student-email" className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
+          <label htmlFor="student-email" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
             Email <span className="text-rose-500">*</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
               <Mail className="w-4 h-4" />
             </div>
             <input
@@ -136,12 +136,12 @@ export default function StudentForm({ onAddStudent }) {
               value={formData.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-stone-50/60 focus:bg-white focus:outline-hidden transition-all ${
+              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-slate-50/50 focus:bg-white focus:outline-hidden transition-all ${
                 errors.email
-                  ? 'border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-200/50'
+                  ? 'border-rose-300 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10'
                   : touched.email && !errors.email && formData.email
-                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200/50'
-                  : 'border-stone-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100'
+                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10'
+                  : 'border-slate-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-500/10'
               }`}
             />
           </div>
@@ -152,11 +152,11 @@ export default function StudentForm({ onAddStudent }) {
 
         {/* Phone Number */}
         <div>
-          <label htmlFor="student-phone" className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
+          <label htmlFor="student-phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
             Phone Number <span className="text-rose-500">*</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
               <Phone className="w-4 h-4" />
             </div>
             <input
@@ -167,12 +167,12 @@ export default function StudentForm({ onAddStudent }) {
               value={formData.phone}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-stone-50/60 focus:bg-white focus:outline-hidden transition-all ${
+              className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border bg-slate-50/50 focus:bg-white focus:outline-hidden transition-all ${
                 errors.phone
-                  ? 'border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-200/50'
+                  ? 'border-rose-300 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10'
                   : touched.phone && !errors.phone && formData.phone
-                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200/50'
-                  : 'border-stone-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100'
+                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10'
+                  : 'border-slate-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-500/10'
               }`}
             />
           </div>
@@ -183,11 +183,11 @@ export default function StudentForm({ onAddStudent }) {
 
         {/* Department */}
         <div>
-          <label htmlFor="student-department" className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
+          <label htmlFor="student-department" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
             Department <span className="text-rose-500">*</span>
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
               <BookOpen className="w-4 h-4" />
             </div>
             <select
@@ -196,12 +196,12 @@ export default function StudentForm({ onAddStudent }) {
               value={formData.department}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full pl-9 pr-8 py-2 text-sm rounded-xl border bg-stone-50/60 focus:bg-white focus:outline-hidden appearance-none transition-all cursor-pointer ${
+              className={`w-full pl-9 pr-8 py-2 text-sm rounded-xl border bg-slate-50/50 focus:bg-white focus:outline-hidden appearance-none transition-all cursor-pointer ${
                 errors.department
-                  ? 'border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-200/50'
+                  ? 'border-rose-300 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10'
                   : touched.department && !errors.department && formData.department
-                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200/50'
-                  : 'border-stone-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100'
+                  ? 'border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10'
+                  : 'border-slate-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-500/10'
               }`}
             >
               <option value="">Select Department...</option>
@@ -211,7 +211,7 @@ export default function StudentForm({ onAddStudent }) {
                 </option>
               ))}
             </select>
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-stone-400">
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
@@ -227,9 +227,9 @@ export default function StudentForm({ onAddStudent }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm text-stone-900 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 border border-amber-500/30 shadow-xs transition-all cursor-pointer disabled:opacity-60"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-sm shadow-purple-200 transition-all cursor-pointer disabled:opacity-60"
           >
-            <PlusCircle className="w-4 h-4 text-stone-900" />
+            <PlusCircle className="w-4 h-4 text-white" />
             <span>Add Student</span>
           </button>
         </div>
