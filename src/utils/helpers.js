@@ -28,37 +28,45 @@ export function getAvatarColor(name = '') {
 }
 
 export function getDepartmentBadgeColor(dept = '') {
-  switch (dept.toLowerCase()) {
-    case 'computer science':
-      return 'bg-blue-50 text-blue-700 border-blue-200';
-    case 'electrical engineering':
-      return 'bg-amber-50 text-amber-700 border-amber-200';
-    case 'mechanical engineering':
-      return 'bg-cyan-50 text-cyan-700 border-cyan-200';
-    case 'business administration':
-      return 'bg-emerald-50 text-emerald-700 border-emerald-200';
-    case 'mathematics':
-      return 'bg-purple-50 text-purple-700 border-purple-200';
-    case 'physics':
-      return 'bg-violet-50 text-violet-700 border-violet-200';
-    case 'civil engineering':
-      return 'bg-orange-50 text-orange-700 border-orange-200';
-    case 'economics':
-      return 'bg-teal-50 text-teal-700 border-teal-200';
-    default:
-      return 'bg-slate-100 text-slate-700 border-slate-200';
+  const d = dept.toLowerCase();
+  if (d.includes('computer') || d.includes('cse')) {
+    return 'bg-blue-50 text-blue-700 border-blue-200';
   }
+  if (d.includes('electrical') || d.includes('eee')) {
+    return 'bg-amber-50 text-amber-700 border-amber-200';
+  }
+  if (d.includes('mechanical')) {
+    return 'bg-cyan-50 text-cyan-700 border-cyan-200';
+  }
+  if (d.includes('civil')) {
+    return 'bg-orange-50 text-orange-700 border-orange-200';
+  }
+  if (d.includes('business') || d.includes('bba')) {
+    return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+  }
+  if (d.includes('pharmacy')) {
+    return 'bg-rose-50 text-rose-700 border-rose-200';
+  }
+  if (d.includes('economics')) {
+    return 'bg-teal-50 text-teal-700 border-teal-200';
+  }
+  if (d.includes('english')) {
+    return 'bg-purple-50 text-purple-700 border-purple-200';
+  }
+  return 'bg-slate-100 text-slate-700 border-slate-200';
 }
 
 export function validateStudent(data) {
   const errors = {};
 
+  // Name validation
   if (!data.name || !data.name.trim()) {
     errors.name = 'Student Name is required.';
   } else if (data.name.trim().length < 2) {
     errors.name = 'Name must be at least 2 characters long.';
   }
 
+  // Email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!data.email || !data.email.trim()) {
     errors.email = 'Email address is required.';
@@ -66,16 +74,27 @@ export function validateStudent(data) {
     errors.email = 'Please provide a valid email (e.g. name@domain.com).';
   }
 
-  // Allow various international phone formats, minimum 7 digits
-  const phoneDigits = (data.phone || '').replace(/\D/g, '');
-  if (!data.phone || !data.phone.trim()) {
+  // Bangladeshi Phone Number validation (accepts 01XXXXXXXXX or +8801XXXXXXXXX)
+  const rawPhone = (data.phone || '').trim();
+  const digitsOnly = rawPhone.replace(/\D/g, '');
+
+  if (!rawPhone) {
     errors.phone = 'Phone Number is required.';
-  } else if (phoneDigits.length < 7 || phoneDigits.length > 15) {
-    errors.phone = 'Please provide a valid phone number (7-15 digits).';
+  } else {
+    // Check if valid Bangladeshi mobile number
+    // Standard format: 11 digits starting with 01 (e.g., 017..., 018..., 019..., 015..., 013..., 014..., 016...)
+    // Or 13 digits starting with 8801...
+    const isBDFormat =
+      (digitsOnly.length === 11 && digitsOnly.startsWith('01')) ||
+      (digitsOnly.length === 13 && digitsOnly.startsWith('8801'));
+
+    if (!isBDFormat) {
+      errors.phone = 'Please enter a valid Bangladeshi mobile number (e.g. 01712-345678 or +880 1712-345678).';
+    }
   }
 
   if (!data.department || !data.department.trim()) {
-    errors.department = 'Please select or enter a department.';
+    errors.department = 'Please select a department.';
   }
 
   return {
@@ -101,7 +120,7 @@ export function exportToCSV(students) {
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement('a');
   link.setAttribute('href', encodedUri);
-  link.setAttribute('download', `students_export_${new Date().toISOString().slice(0, 10)}.csv`);
+  link.setAttribute('download', `bangladeshi_students_export_${new Date().toISOString().slice(0, 10)}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -1,170 +1,110 @@
-# 🎓 Student Management App
+# Student Management App
 
-A responsive, modern, and clean **Student Management Web Application** built with **React**, **Tailwind CSS**, and **Vite**.
+A simple and responsive Student Management web application built with React and Tailwind CSS. This project was developed as part of a front-end assignment to manage student records (add, view, search, edit, delete, and persist data).
 
-This project provides a full-featured interface for educational institutions or administrators to manage student records with real-time validation, search, filtering, editing, deletion with confirmation, and persistent storage.
-
----
-
-## ✨ Features & Highlights
-
-### 1. 📝 Create Student Form (Requirement 1)
-- Form fields:
-  - **Student Name** (minimum 2 characters, validated)
-  - **Email** (format-validated, e.g. `user@university.edu`)
-  - **Phone Number** (digit and format validation)
-  - **Department** (dropdown selection across major departments)
-- **Submit Button**: Validates all inputs and creates a new student entry with immediate feedback.
-- Real-time inline error hints and touched-state indicators.
-
-### 2. 📋 Display Student List (Requirement 2)
-- Displays all registered students in a structured, readable format.
-- Shows **Name**, **Email**, **Phone Number**, and **Department**.
-- **Responsive Layout**:
-  - Full-featured **data table** on desktop and tablet screens.
-  - Mobile-optimized **card layout** on smaller screens to prevent horizontal overflow.
-- Distinct color-coded department badges and avatar initials.
-
-### 3. 🗑️ Delete Student (Requirement 3)
-- Dedicated **Delete button** for every student record.
-- **Safety Confirmation Dialog**: Displays a confirmation modal with student details before deletion to prevent accidental loss of data.
-- Instant toast notification upon removal.
-
-### 4. 🔍 Search Student (Requirement 4)
-- Real-time search bar that filters students **by name** instantly as you type.
-- Clear search (`X`) button for quick reset.
-- Shows total matching count vs total enrolled students.
-
-### 5. 🎨 Modern & Responsive Design (Requirement 5)
-- Designed with **Tailwind CSS** using a crisp, clean slate and indigo aesthetic.
-- Fully responsive across desktop, tablet, and mobile devices (320px+).
-- Polished micro-interactions, accessible focus rings, and intuitive icons via `lucide-react`.
+**Developer:** Mehedi Hossen Fahim  
+**Live Repository:** [https://github.com/MehdiHossenFahim/student_manager_react](https://github.com/MehdiHossenFahim/student_manager_react)
 
 ---
 
-## 🌟 Bonus Tasks Implemented
+## Features
 
-- ✅ **Edit Student Feature**:
-  - Click the **Edit** icon on any student row or card.
-  - Opens a modal with pre-filled student details.
-  - Validates changes and updates the record instantly.
-- ✅ **Total Number of Students & Stats**:
-  - Live metric cards at the top displaying:
-    - **Total Students** enrolled
-    - **Active Departments** count
-    - **Matching Results** counter when searching or filtering
-- ✅ **LocalStorage Persistence**:
-  - Automatically saves all student data to browser `localStorage`.
-  - Survives page refreshes and browser restarts.
-  - Includes sensible default demo data on first launch with a **Reset Demo** button to restore sample data at any time.
-- ✅ **Additional Enhancements**:
-  - **Department Filter**: Filter students by specific department.
-  - **Sort Records**: Sort alphabetically by name (A-Z, Z-A), by department, or by newest/oldest added.
-  - **Export to CSV**: Download the current or filtered student list as a spreadsheet-compatible `.csv` file with one click.
-  - **Toast Notifications**: Clean feedback for every action (add, edit, delete, reset, export).
+### Core Requirements
+1. **Student Registration Form:**
+   - Add new students with Name, Email, Phone Number, and Department.
+   - Includes validation for required fields, valid email format, and Bangladeshi phone numbers (`01XXXXXXXXX` or `+8801XXXXXXXXX`).
+2. **Student Directory / List:**
+   - Shows all enrolled students in a clean table view on desktop and responsive card view on mobile.
+   - Displays Student Name, Email, Phone Number, and Department with color-coded badges.
+3. **Delete Student:**
+   - Delete button for each student record.
+   - Shows a confirmation modal before deleting so records aren't removed by accident.
+4. **Search Functionality:**
+   - Instant search bar to filter students by name in real-time.
+5. **Clean & Responsive UI:**
+   - Built with Tailwind CSS.
+   - Works smoothly on mobile phones, tablets, and desktop screens.
 
----
-
-## 🛠️ Tech Stack
-
-- **Framework**: [React 19](https://react.dev/)
-- **Build Tool**: [Vite 8](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Font**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+### Bonus Features Implemented
+- **Edit Student:** Update any existing student's name, email, phone, or department via an edit modal.
+- **Student Statistics:** Live count of total students, active departments, and search match counter.
+- **LocalStorage Support:** All changes (adds, edits, deletes) automatically save in the browser's LocalStorage so data isn't lost on page refresh.
+- **Department Filter & Sorting:** Quick filter dropdown by department and sorting options (A-Z, Z-A, newest, oldest).
+- **Export to CSV:** Download the student list as a CSV file for spreadsheets.
+- **Reset Demo Data:** One-click reset button to restore the initial Bangladeshi student records for easy testing.
 
 ---
 
-## 🚀 Getting Started
+## Tech Stack
 
-### Prerequisites
-Make sure you have **Node.js** (v18 or higher) and **npm** installed on your machine.
+- **React 19**
+- **Vite**
+- **Tailwind CSS v4**
+- **Lucide React** (icons)
 
-### 1. Clone or Download the Repository
-```bash
-git clone <your-repository-url>
-cd student-management-app
+---
+
+## Project Structure
+
+```
+├── index.html
+├── package.json
+├── vite.config.js
+├── README.md
+└── src/
+    ├── App.jsx
+    ├── main.jsx
+    ├── index.css
+    ├── data/
+    │   └── defaultStudents.js
+    ├── hooks/
+    │   └── useLocalStorage.js
+    ├── utils/
+    │   └── helpers.js
+    └── components/
+        ├── Navbar.jsx
+        ├── StatsOverview.jsx
+        ├── StudentForm.jsx
+        ├── SearchAndFilter.jsx
+        ├── StudentTable.jsx
+        ├── EditStudentModal.jsx
+        ├── DeleteConfirmModal.jsx
+        └── Toast.jsx
 ```
 
-### 2. Install Dependencies
+---
+
+## Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/MehdiHossenFahim/student_manager_react.git
+cd student_manager_react
+```
+
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Run Development Server
+### 3. Run development server
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173`.
+Open `http://localhost:5173` in your browser.
 
-### 4. Build for Production
+### 4. Build for production
 ```bash
 npm run build
 ```
-The optimized production bundle will be generated in the `dist/` directory.
-
-### 5. Preview Production Build
+To test the built production files locally:
 ```bash
 npm run preview
 ```
 
 ---
 
-## 📂 Project Architecture
+## Author
 
-```
-student-management-app/
-├── index.html                   # HTML entry point with fonts & meta
-├── package.json                 # Project dependencies and scripts
-├── vite.config.js               # Vite configuration with Tailwind CSS v4
-├── public/                      # Static public assets
-└── src/
-    ├── App.jsx                  # Main application orchestrator & state
-    ├── main.jsx                 # React root render
-    ├── index.css                # Global CSS & Tailwind imports
-    ├── data/
-    │   └── defaultStudents.js   # Default initial dataset & departments list
-    ├── hooks/
-    │   └── useLocalStorage.js   # Custom hook for localStorage persistence
-    ├── utils/
-    │   └── helpers.js           # Validation, avatar colors, CSV export
-    └── components/
-        ├── Navbar.jsx           # Top navigation with branding & quick actions
-        ├── StatsOverview.jsx    # Metric cards (Total, Departments, Filtered)
-        ├── StudentForm.jsx      # Create student form with field validations
-        ├── SearchAndFilter.jsx  # Search by name, department filter & sort
-        ├── StudentTable.jsx     # Responsive table (desktop) & cards (mobile)
-        ├── EditStudentModal.jsx # Modal dialog for editing student details
-        ├── DeleteConfirmModal.jsx # Confirmation dialog before deletion
-        └── Toast.jsx            # Action notification banners
-```
-
----
-
-## 📤 Submission Instructions (GitHub)
-
-Follow these steps to upload this project to your GitHub account:
-
-### 1. Initialize Git (if not already done)
-```bash
-git init
-git add .
-git commit -m "feat: complete student management app with all requirements and bonus features"
-```
-
-### 2. Create a New Repository on GitHub
-1. Go to [GitHub](https://github.com/) and click **New repository** (or `+` in top right).
-2. Name your repository (e.g. `student-management-app`).
-3. Keep it **Public**.
-4. Do **not** initialize with README or .gitignore (this project already includes them).
-5. Click **Create repository**.
-
-### 3. Link Remote and Push
-```bash
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git branch -M main
-git push -u origin main
-```
-
-### 4. Submit
-Copy your GitHub repository URL (e.g., `https://github.com/username/student-management-app`) and submit it as requested.
+- **Mehedi Hossen Fahim**
+- GitHub: [@MehdiHossenFahim](https://github.com/MehdiHossenFahim)

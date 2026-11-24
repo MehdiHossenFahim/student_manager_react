@@ -108,7 +108,7 @@ export default function StudentForm({ onAddStudent }) {
               id="student-name"
               name="name"
               type="text"
-              placeholder="e.g. Alex Morgan"
+              placeholder="e.g. Tanvir Ahmed"
               value={formData.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -139,7 +139,7 @@ export default function StudentForm({ onAddStudent }) {
               id="student-email"
               name="email"
               type="email"
-              placeholder="e.g. alex.morgan@university.edu"
+              placeholder="e.g. tanvir.ahmed@gmail.com"
               value={formData.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -170,7 +170,7 @@ export default function StudentForm({ onAddStudent }) {
               id="student-phone"
               name="phone"
               type="tel"
-              placeholder="e.g. +1 (555) 019-2834"
+              placeholder="e.g. 01712-345678 or +880 1712-345678"
               value={formData.phone}
               onChange={handleChange}
               onBlur={handleBlur}

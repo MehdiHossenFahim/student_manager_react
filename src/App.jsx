@@ -15,7 +15,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export default function App() {
   // LocalStorage state persistence (Bonus Task)
-  const [students, setStudents] = useLocalStorage('student_mgmt_records_v1', DEFAULT_STUDENTS);
+  const [students, setStudents] = useLocalStorage('student_mgmt_bd_records', DEFAULT_STUDENTS);
 
   // Search & Filter state (Requirement 4)
   const [searchQuery, setSearchQuery] = useState('');
@@ -200,11 +200,13 @@ export default function App() {
       <Toast toast={toast} onClose={() => setToast(null)} />
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-6 mt-12 text-center text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {CURRENT_YEAR} Student Management App. Built with React & Tailwind CSS.</p>
-          <p className="text-slate-400">
-            Features: Add, View, Search, Delete, Edit, Statistics & LocalStorage.
+      <footer className="border-t border-slate-200 bg-white py-6 mt-12 text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="font-medium text-slate-700">
+            © {CURRENT_YEAR} Student Management App — Developed by <span className="text-indigo-600 font-semibold">Mehedi Hossen Fahim</span>
+          </p>
+          <p className="text-slate-500">
+            Features: Add, View, Search, Delete, Edit, Statistics & LocalStorage
           </p>
         </div>
       </footer>

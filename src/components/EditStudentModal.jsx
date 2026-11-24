@@ -116,6 +116,7 @@ export default function EditStudentModal({ student, isOpen, onClose, onSave }) {
               <input
                 type="tel"
                 name="phone"
+                placeholder="e.g. 01712-345678 or +880 1712-345678"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full pl-9 pr-3 py-2 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
