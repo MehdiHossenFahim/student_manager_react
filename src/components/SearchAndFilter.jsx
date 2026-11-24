@@ -13,11 +13,11 @@ export default function SearchAndFilter({
   hasActiveFilters,
 }) {
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 mb-4">
+    <div className="bg-white rounded-2xl border border-stone-200/90 shadow-xs p-4 mb-4">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-        {/* Search Student Input (Requirement 4) */}
+        {/* Search Student Input */}
         <div className="md:col-span-5 relative">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
             <Search className="w-4 h-4" />
           </div>
           <input
@@ -25,12 +25,12 @@ export default function SearchAndFilter({
             placeholder="Search students by name..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-10 pr-9 py-2 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-400"
+            className="w-full pl-10 pr-9 py-2 text-sm rounded-xl border border-stone-200 bg-stone-50/60 focus:bg-white focus:outline-hidden focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-all placeholder:text-stone-400"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 cursor-pointer"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -40,13 +40,13 @@ export default function SearchAndFilter({
 
         {/* Filter by Department */}
         <div className="md:col-span-4 relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
             <Filter className="w-3.5 h-3.5" />
           </div>
           <select
             value={selectedDepartment}
             onChange={(e) => onDepartmentChange(e.target.value)}
-            className="w-full pl-9 pr-8 py-2 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 appearance-none transition-all cursor-pointer text-slate-700"
+            className="w-full pl-9 pr-8 py-2 text-sm rounded-xl border border-stone-200 bg-stone-50/60 focus:bg-white focus:outline-hidden focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 appearance-none transition-all cursor-pointer text-stone-700"
           >
             <option value="">All Departments</option>
             {DEPARTMENTS.map((dept) => (
@@ -55,23 +55,23 @@ export default function SearchAndFilter({
               </option>
             ))}
           </select>
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-stone-400">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
         </div>
 
-        {/* Sort By */}
+        {/* Sort Options */}
         <div className="md:col-span-3 flex items-center gap-2">
           <div className="relative flex-1">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <ArrowUpDown className="w-3.5 h-3.5" />
             </div>
             <select
               value={sortBy}
               onChange={(e) => onSortChange(e.target.value)}
-              className="w-full pl-9 pr-8 py-2 text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 appearance-none transition-all cursor-pointer text-slate-700"
+              className="w-full pl-9 pr-8 py-2 text-sm rounded-xl border border-stone-200 bg-stone-50/60 focus:bg-white focus:outline-hidden focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 appearance-none transition-all cursor-pointer text-stone-700"
             >
               <option value="name-asc">Name (A → Z)</option>
               <option value="name-desc">Name (Z → A)</option>
@@ -79,7 +79,7 @@ export default function SearchAndFilter({
               <option value="newest">Newest First</option>
               <option value="oldest">Oldest First</option>
             </select>
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-stone-400">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>

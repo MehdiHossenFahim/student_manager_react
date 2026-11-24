@@ -1,37 +1,51 @@
 # Student Management App
 
-A responsive web application built with React and Tailwind CSS for managing student records. Users can add, view, search, edit, delete, and persist student information.
+<p align="left">
+  <a href="https://studentmanagerreact.vercel.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-studentmanagerreact.vercel.app-059669?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/React-19-22c55e?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/Tailwind-CSS_v4-eab308?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/Vite-Bundler-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  </a>
+</p>
 
-**Author:** Mehedi Hossen Fahim  
-**Repository:** [https://github.com/MehdiHossenFahim/student_manager_react](https://github.com/MehdiHossenFahim/student_manager_react)
+> **Live Deployment:** [https://studentmanagerreact.vercel.app/](https://studentmanagerreact.vercel.app/)
+
+A responsive web application for managing student records. Built with React and Tailwind CSS featuring full CRUD operations, live search, department filtering, statistics, and browser local storage.
 
 ---
 
 ## Features
 
-### Core Features
-- **Student Form:** Add students with Name, Email, Phone Number, and Department with input validation.
-- **Student List:** View all student records in a responsive table on desktop and card layout on mobile devices.
-- **Search:** Search students by name in real-time.
-- **Delete:** Remove student records with a confirmation dialog to avoid accidental deletion.
-- **Responsive UI:** Clean and modern interface built using Tailwind CSS.
+### Core Capabilities
+- **Student Form:** Add students with Name, Email, Phone Number, and Department with field validation.
+- **Student Directory:** View enrolled students in an adaptive layout — structured table on desktop and mobile-optimized cards on smaller screens.
+- **Real-Time Search:** Instant search filter by student name.
+- **Delete Record:** Remove student records with a confirmation dialog to prevent accidental deletion.
+- **Responsive Theme:** Clean, modern interface designed with an earthy emerald and warm amber color palette.
 
-### Additional Features
-- **Edit Student:** Update existing student records through an edit modal.
-- **Statistics Overview:** Displays total students count, active departments, and search match counters.
-- **Local Storage:** Automatically saves student records in the browser so data persists across refreshes.
-- **Filter & Sort:** Filter records by department and sort alphabetically or by date added.
-- **Export to CSV:** Export the student table to a CSV file.
-- **Reset Demo Data:** Option to restore default sample records for easy testing.
+### Additional Highlights
+- **Edit Student:** Update existing student details through an edit modal.
+- **Live Statistics:** At-a-glance metrics for total enrolled students, active departments, and search match counters.
+- **Local Storage Persistence:** Automatically syncs changes to `localStorage` so data remains intact on page reload.
+- **Filter & Sort:** Filter records by department and sort alphabetically or chronologically.
+- **CSV Export:** Download the current student list directly to a `.csv` spreadsheet file.
+- **Reset Data:** Quick option to restore default sample records for testing.
 
 ---
 
 ## Tech Stack
 
-- **React 19**
-- **Vite**
-- **Tailwind CSS**
-- **Lucide React**
+- **Framework:** React 19
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS v4
+- **Icons:** Lucide React
 
 ---
 
@@ -82,6 +96,7 @@ npm install
 ```bash
 npm run dev
 ```
+Open `http://localhost:5173` in your browser.
 
 ### 4. Build for production
 ```bash
@@ -94,3 +109,4 @@ npm run build
 
 - **Mehedi Hossen Fahim**
 - GitHub: [@MehdiHossenFahim](https://github.com/MehdiHossenFahim)
+- Live App: [studentmanagerreact.vercel.app](https://studentmanagerreact.vercel.app/)

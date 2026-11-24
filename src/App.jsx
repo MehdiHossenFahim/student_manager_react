@@ -126,7 +126,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+    <div className="min-h-screen flex flex-col bg-[#fafaf7] text-stone-800">
       {/* Navigation Bar */}
       <Navbar
         onResetDemo={handleResetDemo}
@@ -200,12 +200,12 @@ export default function App() {
       <Toast toast={toast} onClose={() => setToast(null)} />
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-6 mt-12 text-xs text-slate-500">
+      <footer className="border-t border-stone-200/80 bg-white py-6 mt-12 text-xs text-stone-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="font-medium text-slate-700">
-            © {CURRENT_YEAR} Student Management App — Developed by <span className="text-indigo-600 font-semibold">Mehedi Hossen Fahim</span>
+          <p className="font-medium text-stone-700">
+            © {CURRENT_YEAR} Student Management App &bull; Developed by <span className="text-emerald-700 font-semibold">Mehedi Hossen Fahim</span>
           </p>
-          <p className="text-slate-500">
+          <p className="text-stone-500">
             Features: Add, View, Search, Delete, Edit, Statistics & LocalStorage
           </p>
         </div>
