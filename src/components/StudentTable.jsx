@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, BookOpen, Trash2, Edit3, User, UserX } from 'lucide-react';
+import { Mail, Phone, BookOpen, Trash2, Edit3, UserX } from 'lucide-react';
 import { getInitials, getAvatarColor, getDepartmentBadgeColor } from '../utils/helpers';
 
 export default function StudentTable({

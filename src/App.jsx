@@ -8,8 +8,10 @@ import EditStudentModal from './components/EditStudentModal';
 import DeleteConfirmModal from './components/DeleteConfirmModal';
 import Toast from './components/Toast';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { DEFAULT_STUDENTS, DEPARTMENTS } from './data/defaultStudents';
+import { DEFAULT_STUDENTS } from './data/defaultStudents';
 import { exportToCSV } from './utils/helpers';
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function App() {
   // LocalStorage state persistence (Bonus Task)
@@ -176,12 +178,15 @@ export default function App() {
       </main>
 
       {/* Edit Student Modal (Bonus Task) */}
-      <EditStudentModal
-        student={editingStudent}
-        isOpen={Boolean(editingStudent)}
-        onClose={() => setEditingStudent(null)}
-        onSave={handleSaveEdit}
-      />
+      {editingStudent && (
+        <EditStudentModal
+          key={editingStudent.id}
+          student={editingStudent}
+          isOpen={true}
+          onClose={() => setEditingStudent(null)}
+          onSave={handleSaveEdit}
+        />
+      )}
 
       {/* Delete Confirmation Modal (Requirement 3) */}
       <DeleteConfirmModal
@@ -197,7 +202,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 mt-12 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} Student Management App. Built with React & Tailwind CSS.</p>
+          <p>© {CURRENT_YEAR} Student Management App. Built with React & Tailwind CSS.</p>
           <p className="text-slate-400">
             Features: Add, View, Search, Delete, Edit, Statistics & LocalStorage.
           </p>

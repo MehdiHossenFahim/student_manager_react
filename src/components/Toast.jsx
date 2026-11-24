@@ -14,7 +14,6 @@ export default function Toast({ toast, onClose }) {
 
   const isSuccess = toast.type === 'success';
   const isError = toast.type === 'error';
-  const isInfo = toast.type === 'info';
 
   const bgStyles = isSuccess
     ? 'bg-emerald-50 border-emerald-200 text-emerald-900'

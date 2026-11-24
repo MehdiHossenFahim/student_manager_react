@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { X, Save, Edit3, User, Mail, Phone, BookOpen } from 'lucide-react';
 import { DEPARTMENTS, validateStudent } from '../utils/helpers';
 
 export default function EditStudentModal({ student, isOpen, onClose, onSave }) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    department: '',
+    name: student?.name || '',
+    email: student?.email || '',
+    phone: student?.phone || '',
+    department: student?.department || '',
   });
 
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    if (student) {
-      setFormData({
-        name: student.name || '',
-        email: student.email || '',
-        phone: student.phone || '',
-        department: student.department || '',
-      });
-      setErrors({});
-    }
-  }, [student]);
 
   if (!isOpen || !student) return null;
 
